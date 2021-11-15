@@ -81,7 +81,6 @@ stages:
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
-
           # - task: Bash@3
           #   inputs:
           #     targetType: 'inline'
