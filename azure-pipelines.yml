@@ -25,6 +25,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
+      name: bootcamp-pool-week10
       vmImage: $(vmImageName)
     steps:
     - task: Docker@2
