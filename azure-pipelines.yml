@@ -49,7 +49,7 @@ stages:
   - deployment: Deploy
     displayName: Deploy
     pool:
-      name: nodepool
+      name: bootcamp-pool-week10
       vmImage: $(vmImageName)
     environment: 'SwiphfBootcampAppWithKubernetes.default'
     strategy:
