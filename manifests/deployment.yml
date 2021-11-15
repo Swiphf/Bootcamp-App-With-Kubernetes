@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: swiphfbootcampappwithkubernetes 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swiphfbootcampappwithkubernetes
+  template:
+    metadata:
+      labels:
+        app: swiphfbootcampappwithkubernetes 
+    spec:
+      containers:
+        - name: swiphfbootcampappwithkubernetes 
+          image: containerregistryweek10.azurecr.io/swiphfbootcampappwithkubernetes
+          ports:
+          - containerPort: 8080
