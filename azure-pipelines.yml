@@ -5,17 +5,21 @@ resources:
 - repo: self
 
 variables:
-
-  # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '35b59438-4ac6-4bf2-9847-c51eedec84d9'
-  imageRepository: 'swiphfbootcampappwithkubernetes'
-  containerRegistry: 'containerregistryweek10.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
-  tag: '$(Build.BuildId)'
-  imagePullSecret: 'containerregistryweek1014786a28-auth'
-
-  # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+- group: testing
+- name: 'dockerRegistryServiceConnection'
+  value: '35b59438-4ac6-4bf2-9847-c51eedec84d9'
+- name: 'imageRepository'
+  value: 'swiphfbootcampappwithkubernetes'
+- name: 'containerRegistry'
+  value: 'containerregistryweek10.azurecr.io'
+- name: 'dockerfilePath'
+  value: '$(Build.SourcesDirectory)/Dockerfile'
+- name: 'tag'
+  value: '$(Build.BuildId)'
+- name: imagePullSecret
+  value: 'containerregistryweek1014786a28-auth'
+- name: vmImageName
+  value: 'ubuntu-latest'
 
 
 stages:
@@ -48,6 +52,8 @@ stages:
   jobs:
   - deployment: Deploy
     displayName: Deploy
+    variables: 
+    - group: testing
     pool:
       name: bootcamp-pool-week10
       vmImage: $(vmImageName)
@@ -74,4 +80,8 @@ stages:
                 $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: 'echo "$(test)"'
 
