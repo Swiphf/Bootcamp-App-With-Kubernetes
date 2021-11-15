@@ -1,0 +1,16 @@
+/Dockerfile
+/Dockerfile.archive
+/docker-compose.yml
+/*.yml
+/node_modules/
+/.dockerignore
+/.git
+/.gitignore
+/README.md
+/LICENSE
+/.vscode
+/npm-debug.log
+/coverage
+/.env
+/.editorconfig
+**/dist
