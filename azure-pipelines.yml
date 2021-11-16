@@ -87,3 +87,9 @@ stages:
               secretType: 'generic'
               secretName: 'secretvariables'
               secretArguments: '--from-literal=OKTA_ORG_URL=$(OKTA_ORG_URL)'
+              
+
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: 'echo ''$(PORT), $(OKTA_ORG_URL)'''
