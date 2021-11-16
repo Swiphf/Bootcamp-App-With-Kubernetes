@@ -41,7 +41,6 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-
     - upload: manifests
       artifact: manifests
 
@@ -86,6 +85,6 @@ stages:
               action: 'createSecret'
               kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
               secretType: 'generic'
-              secretName: 'asd'
-              secretArguments: '--from-literal=testing1="testing2"'
+              secretName: 'secret_variables'
+              secretArguments: '--from-literal=OKTA_ORG_URL="this is a test"'
 
