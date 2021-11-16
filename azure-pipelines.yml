@@ -81,4 +81,7 @@ stages:
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
-
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: 'kubectl create secret generic my-secret \ --from-literal=TEST="testinggg"'
