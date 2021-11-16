@@ -82,8 +82,8 @@ stages:
                 $(containerRegistry)/$(imageRepository):$(tag)
 
           - task: KubernetesManifest@0
-            name: test
             inputs:
+              name: 'testingggggg'
               action: 'createSecret'
               kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
               secretType: 'generic'
