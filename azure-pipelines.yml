@@ -85,7 +85,8 @@ stages:
                 --from-literal=OKTA_ORG_URL=$(OKTA_ORG_URL) 
                 --from-literal=PG_DATABASE=$(PG_DATABASE) 
                 --from-literal=PG_HOST=$(PG_HOST) 
-                --from-literal=PG_PASSWORD=$(PG_PASSWORD)--from-literal=PG_PORT=$(PG_PORT) 
+                --from-literal=PG_PASSWORD=$(PG_PASSWORD) 
+                --from-literal=PG_PORT=$(PG_PORT) 
                 --from-literal=PG_USERNAME=$(PG_USERNAME) 
                 --from-literal=PORT=$(PORT) 
 
