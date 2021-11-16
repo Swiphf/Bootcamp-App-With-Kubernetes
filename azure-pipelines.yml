@@ -88,7 +88,7 @@ stages:
               secretName: 'secretvariables'
               secretArguments: |
                 --from-literal=COOKIE_ENCRYPT_PWD=$(COOKIE_ENCRYPT_PWD)
-                # --from-literal=HOST=$(HOST)
+                --from-literal=HOST=$(HOST)
                 # --from-literal=HOST_URL=$(HOST_URL)
                 # --from-literal=NODE_ENV=$(NODE_ENV)
                 # --from-literal=OKTA_CLIENT_ID=$(OKTA_CLIENT_ID)
