@@ -80,18 +80,10 @@ stages:
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
-
-          # - task: Bash@3
-          #   inputs:
-          #     targetType: 'inline'
-          #     script: |
-          #       echo '$(HOST)'
-          #       echo '$(HOST_URL)'
-          #       echo '$(NODE_ENV)'
-          #       echo '$(OKTA_CLIENT_ID)'
-          #       echo '$(OKTA_ORG_URL)'
-          #       echo '$(PG_DATABASE)'
-          #       echo '$(PG_HOST)'
-          #       echo '$(PG_PORT)'
-          #       echo '$(PG_USERNAME)'
-          #       echo '$(PORT)'
+          - task: KubernetesManifest@0
+            inputs:
+              action: 'createSecret'
+              kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
+              secretType: 'generic'
+              secretName: 'secret_variables'
+              secretArguments: '--from-literal=OKTA_ORG_URL=$(OKTA_ORG_URL)'
