@@ -76,11 +76,7 @@ stages:
               secretType: 'generic'
               secretName: 'secretvariables'
               secretArguments: |
-                --from-literal=COOKIE_ENCRYPT_PWD=$(COOKIE_ENCRYPT_PWD)
-                --from-literal=HOST=$(HOST)
-                --from-literal=NODE_ENV=$(NODE_ENV)
-                --from-literal=HOST_URL=$(HOST_URL)
-                --from-literal=OKTA_CLIENT_ID=$(OKTA_CLIENT_ID)
+                --from-literal=COOKIE_ENCRYPT_PWD=$(COOKIE_ENCRYPT_PWD) HOST=$(HOST) NODE_ENV=$(NODE_ENV) $(HOST_URL) $(OKTA_CLIENT_ID)
 
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
