@@ -82,10 +82,11 @@ stages:
                 $(containerRegistry)/$(imageRepository):$(tag)
 
           - task: KubernetesManifest@0
+            name: test
             inputs:
               action: 'createSecret'
               kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
               secretType: 'generic'
-              secretName: 'OKTA_ORG_URL'
-              secretArguments: '123'
+              secretName: 'testinggg'
+              secretArguments: 'test=123'
 
