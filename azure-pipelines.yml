@@ -83,10 +83,9 @@ stages:
 
           - task: KubernetesManifest@0
             inputs:
-              name: 'testingggggg'
               action: 'createSecret'
               kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
               secretType: 'generic'
-              secretName: 'testinggg'
+              secretName: '''testinggg'''
               secretArguments: 'test=123'
 
