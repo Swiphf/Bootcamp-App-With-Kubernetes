@@ -43,4 +43,4 @@ spec:
           -  name: PG_USERNAME
              value: PG_USERNAME
           -  name: PORT
-             value: '8080'
+             value: PORT
