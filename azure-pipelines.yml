@@ -81,7 +81,10 @@ stages:
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
-          - task: Bash@3
+          - task: KubernetesManifest@0
             inputs:
-              targetType: 'inline'
-              script: 'kubectl create secret generic my-secret \ --from-literal=TEST="testinggg"'
+              action: 'createSecret'
+              kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
+              secretType: 'generic'
+              secretName: 'testinggg'
+              secretArguments: 'OKTA_ORG_URL=123'
