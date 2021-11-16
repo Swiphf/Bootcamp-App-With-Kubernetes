@@ -17,9 +17,9 @@ spec:
           image: containerregistryweek10.azurecr.io/swiphfbootcampappwithkubernetes
           ports:
           - containerPort: 8080
-          envFrom:
-          - configMapRef:
-              name: env-configmap.yml           
-          - secretRef:
-              name: env-secrets.yml
-          
+          env:
+          - name: OKTA_ORG_URL
+            valueFrom:
+              secretKeyRef:
+                name: secretvariables
+                key: OKTA_ORG_URL
