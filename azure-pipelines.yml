@@ -87,4 +87,5 @@ stages:
               kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
               secretType: 'generic'
               secretName: 'asd'
+              secretArguments: '--from-literal=testing1="testing2"'
 
