@@ -85,5 +85,5 @@ stages:
               action: 'createSecret'
               kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
               secretType: 'generic'
-              secretName: 'secret_variables'
+              secretName: 'secretvariables'
               secretArguments: '--from-literal=OKTA_ORG_URL=$(OKTA_ORG_URL)'
