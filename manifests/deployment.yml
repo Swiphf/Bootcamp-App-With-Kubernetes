@@ -23,3 +23,8 @@ spec:
               secretKeyRef:
                 name: secretvariables
                 key: COOKIE_ENCRYPT_PWD
+          - name: HOST
+            valueFrom:
+              secretKeyRef:
+                name: secretvariables
+                key: HOST
