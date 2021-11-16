@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap
+data:
+  TESTINGGG: This is a test
+  TEST2: "This is a test"
