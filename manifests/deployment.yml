@@ -28,8 +28,3 @@ spec:
               secretKeyRef:
                 name: secretvariables
                 key: HOST
-          - name: NODE_ENV
-            valueFrom:
-              secretKeyRef:
-                name: secretvariables
-                key: NODE_ENV
