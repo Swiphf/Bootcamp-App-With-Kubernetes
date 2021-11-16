@@ -41,12 +41,14 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+
     - upload: manifests
       artifact: manifests
 
 - stage: Deploy
   displayName: Deploy stage
   dependsOn: Build
+
   jobs:
   - deployment: Deploy
     displayName: Deploy
@@ -86,4 +88,3 @@ stages:
               secretType: 'generic'
               secretName: 'secret_variables'
               secretArguments: '--from-literal=OKTA_ORG_URL="this is a test"'
-
