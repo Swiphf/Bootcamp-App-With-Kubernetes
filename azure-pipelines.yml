@@ -86,5 +86,4 @@ stages:
               action: 'createSecret'
               kubernetesServiceConnection: 'aks-weighttracker-week10-stage-default'
               secretType: 'generic'
-              secretArguments: 'test=123'
 
